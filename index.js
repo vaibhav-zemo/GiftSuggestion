@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 4000;
 const cors = require("cors");
 const database = require("./Config/database");
 const Gift = require("./models/gift");
+const router = require("./Routes/index");
 dotenv.config();
 
 app.use(express.json());
@@ -20,15 +21,13 @@ app.use(
 database.connect();
 
 app.get("/", async (req, res) => {
-
-  const gifts = await Gift.find({});
-  console.log(gifts);
-
   return res.json({
     succeess: true,
     message: "your server is up and running",
   });
 });
+
+app.use("/api", router);
 
 app.listen(PORT, () => {
   console.log("app is running live on require port");

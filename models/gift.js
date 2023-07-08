@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const GiftSchema = new mongoose.Schema(
   {
-    ProductName: {
+    "Product Name": {
       type: String,
     },
     Age: {
@@ -13,7 +13,7 @@ const GiftSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    OccasionType: {
+    "Occasion Type": {
       type: String,
       require: true,
     },
@@ -25,7 +25,10 @@ const GiftSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    AffiliateLink: {
+    "Affiliate Link": {
+      type: String,
+    },
+    "Affiliate Code": {
       type: String,
     },
   },
